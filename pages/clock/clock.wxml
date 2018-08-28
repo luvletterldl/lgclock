@@ -1,0 +1,35 @@
+<!--pages/clock/clock.wxml-->
+<view class='bg' >
+  <view class='calendar' style='visibility:{{calendar}}'>
+    <text>{{week}}</text>
+    <text>{{mouth}}</text>
+    <text>{{day}}</text>
+    <text>{{year}}</text>
+  </view>
+  <view class='clock'>
+    <view class='hour'>
+      <image class='himg' src='../../utils/resource/image/timebg.png'></image>
+      <view class='htexts'>
+        <text class='htext'>{{ho}}</text>
+        <text class='htext'>{{ht}}</text>
+      </view>
+    </view>
+    <view class='htom'>
+      <image class='mtosup' src='../../utils/resource/image/mtos.png'></image>
+      <image class='mtosdown' src='../../utils/resource/image/mtos.png'></image>
+    </view>
+    <view class='min'>
+      <image class='mimg' src='../../utils/resource/image/timebg.png'></image>
+      <view class='mtexts'>
+        <text class='mtext'>{{mo}}</text>
+        <text class='mtext'>{{mt}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='trans' style='visibility:{{trans}}' bindtap='toCountdown'>
+    <image src='../../utils/resource/image/clock.png'></image>
+  </view>
+</view>
+
+
+

@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/clockcd/clockcd",
+    "pages/clock/clock",
+    "pages/countdown/countdown"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}

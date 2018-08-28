@@ -1,0 +1,89 @@
+<!--pages/countdown/countdown.wxml-->
+<view class='bg'>
+  <view class='hms-bg'>
+    <view class='hlump'>
+      <image bindtap='addh' class='add' style='visibility:{{add}}' src='../../utils/resource/image/add.png'></image>
+      <image class='topbg' src='../../utils/resource/image/timebg.png'></image>
+      <image bindtap='redch' class='reduce' style='visibility:{{reduce}}' src='../../utils/resource/image/reduce.png'></image>
+      <view class='axles'>
+        <text class='htext'>{{ho}}</text>
+        <text class='htext'>{{ht}}</text>
+      </view>
+    </view>
+    <view class='htom'>
+      <image class='mtosup' src='../../utils/resource/image/mtos.png'></image>
+      <image class='mtosdown' src='../../utils/resource/image/mtos.png'></image>
+    </view>
+    <view class='mlump'>
+      <image bindtap='addm' class='add' style='visibility:{{add}}' src='../../utils/resource/image/add.png'></image>
+      <image class='topbg' src='../../utils/resource/image/timebg.png'></image>
+      <image bindtap='redcm' class='reduce' style='visibility:{{reduce}}' src='../../utils/resource/image/reduce.png'></image>
+      <view class='axles'>
+        <text class='mtext'>{{mo}}</text>
+        <text class='mtext'>{{mt}}</text>
+      </view>
+    </view>
+    <view class='htom'>
+      <image class='mtosup' src='../../utils/resource/image/mtos.png'></image>
+      <image class='mtosdown' src='../../utils/resource/image/mtos.png'></image>
+    </view>
+    <view class='slump'>
+      <image bindtap='adds' class='add' style='visibility:{{add}}' src='../../utils/resource/image/add.png'></image>
+      <image class='topbg' src='../../utils/resource/image/timebg.png'></image>
+      <image bindtap='redcs' class='reduce' style='visibility:{{reduce}}' src='../../utils/resource/image/reduce.png'></image>
+      <view class='axles'>
+        <text class='stext'>{{so}}</text>
+        <text class='stext'>{{st}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='btns'>
+    <button size='mini' class='leftbtn' style='display:{{recdbtns}};margin-right:-20vh;' bindtap='recdbtn'>{{recdbtn}}</button>
+    <button size='mini' class='leftbtn' style='visibility:{{leftbtns}};' bindtap='leftbtn'>{{leftbtn}}</button>
+    <button size='mini' class='midbtn' style='visibility:{{midbtns}};' bindtap='midbtn'>{{midbtn}}</button>
+    <button size='mini' class='rightbtn' style='visibility:{{rightbtns}};' bindtap='rightbtn'>{{rightbtn}}</button>
+    <button size='mini' class='rightbtn' style='color:#66CC33;display:{{sharebtns}};margin-left:-20vh;' bindtap='onShareAppMessage' open-type="share">{{sharebtn}}</button>
+  </view>
+  <view class='transform' bindtap='back'>
+    <image src='../../utils/resource/image/countdown.png'></image>
+  </view>
+  <!-- set time pop-up -->
+  <view class='waring' style='display:{{waring}};'>
+    <view class='warct'>
+      <text>提示</text>
+      <view class="divLine"></view>
+      <text class='context'>请设定时间</text>
+    </view>
+  </view>
+  <!-- finished pop-up -->
+  <view class='finished' style='display:{{finished}};'>
+    <view class='finct'>
+      <view>
+        <text>提示</text>
+      </view>
+      <view>
+        <text class='context'>恭喜你已坚持{{fintime}}，又朝着优秀迈进了一步！</text>
+      </view>
+      <view class="divLine"></view>
+      <view>
+        <text bindtap='closefin' style='color:#66CC33;'>确认</text>
+      </view>
+    </view>
+  </view>
+  <!-- abort pop-up -->
+  <view class='areysure' style='display:{{areysure}};'>
+    <view class='aresure'>
+      <view>
+        <text>提示</text>
+      </view>
+      <text class='context'>确认停止计时？你已坚持{{insistime}}了。</text>
+      <view class="divLine"></view>
+      <view class='cancon'>
+        <text bindtap='cancel' style='color:#BBBFCB'>取消</text>
+        <text>|</text>
+        <text bindtap='confirm' style='color:#66CC33;'>确认</text>
+      </view>
+    </view>
+  </view>
+</view>
+
