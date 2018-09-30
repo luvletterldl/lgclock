@@ -93,11 +93,15 @@
 
 <!--pages/clock/clock.wxml-->
 <view class='ckbg' wx:if="{{clock == 'show'}}">
-  <view class='calendar'>
+  <view class='calendar' style='visibility:{{calfbtrans}};'>
     <text>{{year}}</text>
     <text>{{mouth}}</text>
     <text>{{day}}</text>
     <button class='week' size='mini' style='margin-left:3vw;border-radius: 10px;color:#000000;background-color:#ffffff;'>{{week}}</button>
+  </view>
+  <view class='feedback' style='visibility:{{calfbtrans}};' bindtap='tofdbk'>
+    <text>意见反馈</text>
+    <image src="../../utils/resource/image/feedback.png"></image>
   </view>
   <view class='apm'>
     <text style='color: #ffffff;'>{{apm}}</text>
@@ -125,9 +129,17 @@
     </view>
   </view>
 </view>
-<view class='transform'>
+<view class='show-hidden' bindtap='msgswitch' wx:if="{{clock == 'show'}}">
+  <image wx:if="{{othermsg == 'show'}}" src='../../utils/resource/image/show.png'></image>
+  <image wx:if="{{othermsg == 'hidden'}}" src='../../utils/resource/image/hidden.png'></image>
+</view>
+<view class='transform' style='visibility:{{calfbtrans}};'>
   <!-- 切换成秒表模式 -->
   <image bindtap='toCountdown' style='display: {{tocd}}' src='../../utils/resource/image/clock.png'></image>
   <!-- 切换成时钟模式 -->
   <image bindtap='back' style='display: {{toclock}}' src='../../utils/resource/image/countdown.png'></image>
+</view>
+
+<view  class='loading' wx:if="{{clock == 'hidden'}}">
+  <image animation="{{animationData}}" src='../../utils/resource/image/loading.svg'></image>
 </view>

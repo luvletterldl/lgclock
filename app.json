@@ -1,8 +1,7 @@
 {
   "pages": [
     "pages/clockcd/clockcd",
-    "pages/clock/clock",
-    "pages/countdown/countdown"
+    "pages/feedback/feedback"
   ],
   "window": {
     "backgroundTextStyle": "light",

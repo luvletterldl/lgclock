@@ -1,0 +1,24 @@
+<!--pages/feedback/feedback.wxml-->
+<view class='vessel'>
+  <view class='header'>
+    <view class='title'>意见反馈</view>
+    <text class='context'>请详细描述您的问题或建议，我们将及时跟进解决。</text>
+  </view>
+  <view class='fdmsg'>
+    <textarea placeholder="请输入您的宝贵意见" maxlength='200' class='ttaa' bindinput="inputfd"></textarea>
+    <view class='fonts'>({{fonts}}/200)</view>
+  </view>
+  <view class='imgs'>
+    <view wx:for="{{images}}" wx:for-item="img">
+      <image class='addimg' src='{{img}}' id='{{index}}' bindtap='delimg'></image>
+    </view>
+    <image wx:if="{{images.length <= 3}}" class='addimg' src='../../utils/resource/image/addimg.png' bindtap='chooseimg'></image>
+    <text wx:if="{{images.length <= 1}}" class='desc'>添加图片说明 (最多4张)</text>
+  </view>
+  <view class='contactinfo'>
+    <input placeholder=' 输入您的联系方式，方便我们给你回复。' maxlength='20' bindinput="inputcc"></input>
+  </view>
+  <view class='bottom'>
+    <button class='submit' bindtap='submit'>提交</button>
+  </view>
+</view>

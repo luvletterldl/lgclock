@@ -47,6 +47,9 @@ Page({
    */
   data: {
 
+    othermsg: 'show',
+    calfbtrans: '',
+
     dontfast: 'none',
 
     animationData: {},
@@ -62,7 +65,7 @@ Page({
     tocd: 'block',
     toclock: 'none',
 
-    clock: 'show',
+    clock: 'hidden',
     codo: '',
 
     add: '',
@@ -131,6 +134,26 @@ Page({
   },
 
   //events
+  tofdbk: function () {
+    wx.navigateTo({
+      url: '../feedback/feedback',
+    })
+  },
+
+  msgswitch: function () {
+    if(this.data.othermsg == 'show'){
+      this.setData({
+        othermsg: 'hidden',
+        calfbtrans: 'hidden',
+      })
+    } else {
+      this.setData({
+        othermsg: 'show',
+        calfbtrans: '',
+      })
+    }
+  },
+
   // recountdown
   recdbtn: function () {
     this.setData({
@@ -515,6 +538,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    setTimeout(() => {
+      this.setData({
+        clock: 'show',
+      })
+    },1000)
+    let ani = wx.createAnimation({})
+    this.ani = ani
+    this.ani.rotate(180).translate(-50, -200).step({ duration: 1000 })
+    this.setData({
+      animationData: this.ani.export()
+    })
     // 屏幕常亮
     wx.setKeepScreenOn({
       keepScreenOn: true,
@@ -535,12 +569,14 @@ Page({
     setInterval(() => {
       let time = new Date()
       let apm = ['AM', 'PM']
-      let twelve = time.toLocaleTimeString().slice(2).slice(0, -3).split(':')
-      let pam = time.toLocaleTimeString().slice(0, 2)
-      if(pam == '上午'){this.setData({apm: apm[0],})
-      }else{this.setData({apm: apm[1]})}
-      let h = twelve[0]
-      let m = twelve[1]
+      let h = time.getHours()
+      let m = time.getMinutes()
+      if (h < 12) { //设置上下午
+        this.setData({ apm: apm[0], })
+      } else { this.setData({ apm: apm[1] }) }
+      if(h > 12) { //如果时大于12就-12
+        h = h - 12
+      }
       let lenh = h.toString().length
       let lenm = m.toString().length
       if (lenh == 1) h = '0' + h
@@ -565,7 +601,6 @@ Page({
     wx.setKeepScreenOn({
       keepScreenOn: true,
     })
-    console.log(new Date().getTime())
     //share
     wx.showShareMenu({
       withShareTicket: true,

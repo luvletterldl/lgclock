@@ -74,6 +74,14 @@
   width: 15vh;
   height: 4.5vh;
 }
+.show-hidden {
+  transform: rotate(90deg) translate(-95vh, -3vw);
+  position: absolute;
+}
+.show-hidden image {
+  width: 5.5vh;
+  height: 5vw;
+}
 
 .btns button {
   font-size: 2.2vh;
@@ -158,7 +166,7 @@
   flex-direction: column;
 }
 .clock {
-  transform: rotate(90deg) translate(15vh);
+  transform: rotate(90deg) translate(11vh);
   display: flex;
   align-items: center;
 }
@@ -171,8 +179,20 @@
   align-items: center;
   color: #ffffff;
 }
+.feedback {
+  display: flex;
+  transform: rotate(90deg)  translate(80vh, -41vw);
+  color: #ffffff;
+  align-items: center;
+  width: 17vh;
+  justify-content: space-around;
+}
+.feedback image {
+  width: 3vh;
+  height: 4vw;
+}
 .apm {
-  transform: rotate(90deg)  translate(7vw, 25vw);
+  transform: rotate(90deg)  translate(0, 25vw);
   z-index: 11;
   font-family: Impact;
   font-size: 4vh;
@@ -231,6 +251,15 @@
   width: 9vh;
   height: 3vh;
 } */
+
+.loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+}
+.loading image{
+  transform: translate(50rpx, 400rpx);
+}  
 
 @font-face {
     font-family: 'Impact';

@@ -1,0 +1,76 @@
+/* pages/feedback/feedback.wxss */
+.vessel {
+  width: 100vw;
+  height: 100vh;
+  background-color: #F1F2F2;
+}
+.header {
+  width: 100vw;
+  height: 13vh;
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 12vh 0 1vh 0vw;
+}
+.title {
+  font-size: 8vw;
+  padding-left: 4vw;
+}
+.context {
+  font-size: 4vw;
+  font-weight: 100;
+  padding-left: 4vw;
+}
+.fdmsg {
+  background-color: #ffffff;
+  padding: 2vh 0 0 0;
+}
+.ttaa {
+  display: flex;
+  font-size: 4vw;
+  font-weight: 100;
+  height: 40h;
+  width: 90vw;
+  padding-left: 5vw; 
+}
+.imgs {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+.fonts {
+  font-size: 4vw;
+  color: #c4c5c6;
+  margin-left: 80vw;
+}
+.desc {
+  font-size: 4vw;
+  color: #c4c5c6;
+}
+.addimg {
+  width: 21vw;
+  height: 21vw;
+  margin: 2vw;
+}
+.contactinfo {
+  font-size: 4vw;
+  background-color: #ffffff;
+  margin-top: 2vh;
+}
+.contactinfo input {
+  padding: 2vh 3vw;
+}
+.bottom {
+  display: flex;
+  align-items: center;
+  background-color: #F1F2F2;
+  margin-top: 8vh;
+}
+.submit {
+  background-color: #000000;
+  color: #ffffff;
+  width: 70vw;
+  border-radius: 50rpx;
+}
