@@ -1,12 +1,14 @@
 {
   "pages": [
     "pages/clockcd/clockcd",
+    "pages/setting/setting",
+    "pages/themes/themes",
     "pages/feedback/feedback"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000000",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "",
     "navigationBarTextStyle": "black"
   }
 }

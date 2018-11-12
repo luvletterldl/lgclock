@@ -1,145 +1,76 @@
-<!--pages/countdown/countdown.wxml-->
-<view class='cdbg' wx:if="{{codo == 'show'}}">
-  <view class='hms-bg'>
-    <view class='hlump'>
-      <image bindtap='addh' class='add' style='visibility:{{add}}' src='../../utils/resource/image/add.png'></image>
-      <image class='topbg' src='../../utils/resource/image/timebg.png'></image>
-      <image bindtap='redch' class='reduce' style='visibility:{{reduce}}' src='../../utils/resource/image/reduce.png'></image>
-      <image class='cdline' src='../../utils/resource/image/line.png'></image>
-      <view class='axles'>
-        <text class='htext'>{{ho}}</text>
-        <text class='htext'>{{ht}}</text>
-      </view>
-    </view>
-    <view class='cdhtom'>
-      <image class='mtosup' src='../../utils/resource/image/mtos.png'></image>
-      <image class='mtosdown' src='../../utils/resource/image/mtos.png'></image>
-    </view>
-    <view class='mlump'>
-      <image bindtap='addm' class='add' style='visibility:{{add}}' src='../../utils/resource/image/add.png'></image>
-      <image class='topbg' src='../../utils/resource/image/timebg.png'></image>
-      <image bindtap='redcm' class='reduce' style='visibility:{{reduce}}' src='../../utils/resource/image/reduce.png'></image>
-      <image class='cdline' src='../../utils/resource/image/line.png'></image>
-      <view class='axles'>
-        <text class='mtext'>{{mo}}</text>
-        <text class='mtext'>{{mt}}</text>
-      </view>
-    </view>
-    <view class='cdhtom'>
-      <image class='mtosup' src='../../utils/resource/image/mtos.png'></image>
-      <image class='mtosdown' src='../../utils/resource/image/mtos.png'></image>
-    </view>
-    <view class='slump'>
-      <image bindtap='adds' class='add' style='visibility:{{add}}' src='../../utils/resource/image/add.png'></image>
-      <image class='topbg' src='../../utils/resource/image/timebg.png'></image>
-      <image bindtap='redcs' class='reduce' style='visibility:{{reduce}}' src='../../utils/resource/image/reduce.png'></image>
-      <image class='cdline' src='../../utils/resource/image/line.png'></image>
-      <view class='axles'>
-        <text class='stext'>{{so}}</text>
-        <text class='stext'>{{st}}</text>
-      </view>
-    </view>
-  </view>
-  <view class='btns'>
-    <button size='mini' hover-start-time='400' hover-stay-time='100' disabled='{{recddis}}' class='leftbtn' style='display:{{recdbtns}};margin-right:-20vh;' bindtap='recdbtn'>{{recdbtn}}</button>
-    <button size='mini' hover-start-time='400' hover-stay-time='100' disabled='{{pausedis}}' class='leftbtn' style='visibility:{{leftbtns}};' bindtap='leftbtn'>{{leftbtn}}</button>
-    <button size='mini' hover-start-time='400' hover-stay-time='100' disabled='{{begindis}}' class='midbtn' style='visibility:{{midbtns}};' bindtap='midbtn'>{{midbtn}}</button>
-    <button size='mini' hover-start-time='400' hover-stay-time='100' disabled='{{abortdis}}' class='rightbtn' style='visibility:{{rightbtns}};' bindtap='rightbtn'>{{rightbtn}}</button>
-    <button size='mini' hover-start-time='400' hover-stay-time='100' disabled='{{sharedis}}' class='rightbtn' style='color:#66CC33;display:{{sharebtns}};margin-left:-20vh;' bindtap='onShareAppMessage' open-type="share">{{sharebtn}}</button>
-  </view>
-  <!-- set time pop-up -->
-  <view class='waring' style='display:{{waring}};'>
-    <view class='warct'>
-      <text>提示</text>
-      <view class="divLine"></view>
-      <text class='context' style='color:#66CC33;'>请设定时间</text>
-    </view>
-  </view>
-  <!-- tips pop-up -->
-  <view class='dontfast' style='display:{{dontfast}};'>
-    <view class='warct'>
-      <text>提示</text>
-      <view class="divLine"></view>
-      <text class='context' bindtap='recover' style='color:#66CC33;'>你的点击次数太频繁了！</text>
-    </view>
-  </view>
-  <!-- finished pop-up -->
-  <view class='finished' style='display:{{finished}};'>
-    <view class='finct'>
-      <text>提示</text>
-      <view class="divLine"></view>
-      <text class='context'>恭喜你已坚持{{fintime}}，又朝着优秀迈进了一步！</text>
-      <view>
-        <text bindtap='closefin' style='color:#66CC33;'>确认</text>
-      </view>
-    </view>
-  </view>
-  <!-- abort pop-up -->
-  <view class='areysure' style='display:{{areysure}};'>
-    <view class='aresure'>
-      <view>
-        <text>提示</text>
-      </view>
-      <text class='context'>确认停止计时？你已坚持{{insistime}}了。</text>
-      <view class="divLine"></view>
-      <view class='cancon'>
-        <text bindtap='cancel' style='color:#BBBFCB;'>取消</text>
-        <text>|</text>
-        <text bindtap='confirm' style='color:#66CC33;'>确认</text>
-      </view>
-    </view>
-  </view>
-</view>
-
 <!--pages/clock/clock.wxml-->
-<view class='ckbg' wx:if="{{clock == 'show'}}">
-  <view class='calendar' style='visibility:{{calfbtrans}};'>
-    <text>{{year}}</text>
-    <text>{{mouth}}</text>
-    <text>{{day}}</text>
-    <button class='week' size='mini' style='margin-left:3vw;border-radius: 10px;color:#000000;background-color:#ffffff;'>{{week}}</button>
+<view class='ckbg' style='background-color:{{bgcolors[0]}};' wx:if="{{clock == 'show'}}">
+  <view class="{{!showS[1] ? 'calendar' : 'calendarWS'}}" style='color:{{bgcolors[1]}};'>
+    <text style='font-size:5vw;font-weight:700;visibility:{{showS[2] ? "" : "hidden"}}'>{{year}}</text>
+    <text style='font-size:5vw;font-weight:700;visibility:{{showS[2] ? "" : "hidden"}}'>{{mouth}}</text>
+    <text style='font-size:5vw;font-weight:700;visibility:{{showS[2] ? "" : "hidden"}}'>{{day}}</text>
+    <view class='week' style='visibility:{{showS[3] ? "" : "hidden"}};background-color: #ffffff;color:{{bgcolors[2]}};'>{{week}}</view>
   </view>
-  <view class='feedback' style='visibility:{{calfbtrans}};' bindtap='tofdbk'>
-    <text>意见反馈</text>
-    <image src="../../utils/resource/image/feedback.png"></image>
+  <view class="{{!showS[1] ? 'set' : 'setWS'}}" style='visibility:{{}};' bindtap='toset'>
+    <image wx:if="{{bgcolors[0] != '#f3f3f3'}}" src="../../utils/resource/image/setw.png"></image>
+    <image wx:if="{{bgcolors[0] == '#f3f3f3'}}" src="../../utils/resource/image/setb.png"></image>
   </view>
-  <view class='apm'>
-    <text style='color: #ffffff;'>{{apm}}</text>
+  <view class="{{!showS[1] ? 'apm' : 'apmWS'}}" style='visibility:{{!showS[0] ? "" : "hidden"}}'>
+    <text style='color:{{bgcolors[7]}};'>{{apm}}</text>
   </view>
-  <view class='clock'>
+  <view class='clock' wx:if="{{!showS[1]}}">
     <view class='hour'>
-      <image class='himg' src='../../utils/resource/image/timebg.png'></image>
-      <view class='chtexts'>
+      <view class='himg' style='background-color:{{bgcolors[3]}};'></view>
+      <view class='chtexts' style='color:{{bgcolors[4]}};'>
         <text class='chtext'>{{cho}}</text>
         <text class='chtext'>{{cht}}</text>
       </view>
-      <image class='line' src='../../utils/resource/image/line.png'></image>
+      <view class='line' style='background-color:{{bgcolors[6]}};'></view>
     </view>
-    <view class='chtom'>
-      <image class='mtosup' src='../../utils/resource/image/mtos.png'></image>
-      <image class='mtosdown' src='../../utils/resource/image/mtos.png'></image>
+    <view class='chtom' style='visibility:{{secblbl ? "" : "hidden"}};'>
+      <view class='mtosup' style='background-color:{{bgcolors[5]}};'></view>
+      <view class='mtosdown' style='background-color:{{bgcolors[5]}};'></view>
     </view>
     <view class='min'>
-      <image class='mimg' src='../../utils/resource/image/timebg.png'></image>
-      <view class='cmtexts'>
+      <view class='mimg' style='background-color:{{bgcolors[3]}};'></view>
+      <view class='cmtexts' style='color:{{bgcolors[4]}};'>
         <text class='cmtext'>{{cmo}}</text>
         <text class='cmtext'>{{cmt}}</text>
       </view>
-      <image class='line' src='../../utils/resource/image/line.png'></image>
+      <view class='line' style='background-color:{{bgcolors[6]}};'></view>
+    </view>
+  </view>
+  <view class='clockWithS' wx:if="{{showS[1]}}">
+    <view class='hourWS'>
+      <view class='himgWS' style='background-color:{{bgcolors[3]}};'></view>
+      <view class='chtextsWS' style='color:{{bgcolors[4]}};'>
+        <text class='chtextWS'>{{cho}}</text>
+        <text class='chtextWS'>{{cht}}</text>
+      </view>
+      <view class='lineWS' style='background-color:{{bgcolors[6]}};'></view>
+    </view>
+    <view class='chtomWS' style='visibility:{{secblbl ? "" : "hidden"}};'>
+      <view class='mtosupWS' style='background-color:{{bgcolors[5]}};'></view>
+      <view class='mtosdownWS' style='background-color:{{bgcolors[5]}};'></view>
+    </view>
+    <view class='minWS'>
+      <view class='mimgWS' style='background-color:{{bgcolors[3]}};'></view>
+      <view class='cmtextsWS' style='color:{{bgcolors[4]}};'>
+        <text class='cmtextWS'>{{cmo}}</text>
+        <text class='cmtextWS'>{{cmt}}</text>
+      </view>
+      <view class='lineWS' style='background-color:{{bgcolors[6]}};'></view>
+    </view>
+    <view class='chtomWS' style='visibility:{{secblbl ? "" : "hidden"}};'>
+      <view class='mtosupWS' style='background-color:{{bgcolors[5]}};'></view>
+      <view class='mtosdownWS' style='background-color:{{bgcolors[5]}};'></view>
+    </view>
+    <view class='secWS'>
+      <view class='simgWS' style='background-color:{{bgcolors[3]}};'></view>
+      <view class='cstextsWS' style='color:{{bgcolors[4]}};'>
+        <text class='cstextWS'>{{cso}}</text>
+        <text class='cstextWS'>{{cst}}</text>
+      </view>
+      <view class='lineWS' style='background-color:{{bgcolors[6]}};'></view>
     </view>
   </view>
 </view>
-<view class='show-hidden' bindtap='msgswitch' wx:if="{{clock == 'show'}}">
-  <image wx:if="{{othermsg == 'show'}}" src='../../utils/resource/image/show.png'></image>
-  <image wx:if="{{othermsg == 'hidden'}}" src='../../utils/resource/image/hidden.png'></image>
-</view>
-<view class='transform' style='visibility:{{calfbtrans}};'>
-  <!-- 切换成秒表模式 -->
-  <image bindtap='toCountdown' style='display: {{tocd}}' src='../../utils/resource/image/clock.png'></image>
-  <!-- 切换成时钟模式 -->
-  <image bindtap='back' style='display: {{toclock}}' src='../../utils/resource/image/countdown.png'></image>
-</view>
 
-<view  class='loading' wx:if="{{clock == 'hidden'}}">
+<view  class='loading' wx:if="{{clock == 'hidden'}}" style='background-color:{{bgcolors[0]}};'>
   <image animation="{{animationData}}" src='../../utils/resource/image/loading.svg'></image>
 </view>

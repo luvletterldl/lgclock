@@ -98,6 +98,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    platform: "ios"
+    platform: "ios",
   }
 })

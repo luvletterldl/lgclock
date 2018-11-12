@@ -1,0 +1,25 @@
+/* pages/themes/themes.wxss */
+.pshell {
+  display: flex;
+  flex-wrap: wrap;
+}
+.pureviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vh 4.7vw;
+  border: solid .1vw #cccccc;
+}
+.puresimg {
+  width: 40vw;
+  height: 22vw;
+}
+.toset {
+  margin-top: 2vh;
+  padding: 1vh 0;
+  width: 30vw;
+  text-align: center;
+  background-color: #333333;
+  color: white;
+  font-size: 4vw;
+}

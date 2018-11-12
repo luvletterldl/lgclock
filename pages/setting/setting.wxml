@@ -1,0 +1,28 @@
+<view>
+    <view class='setitems' bindtap='tochoose'>
+      <text>选择主题</text>
+      <image style='width: 5vw;height: 5vw;' src='../../utils/resource/image/detail.png'></image>
+    </view>
+    <view class='setitems'>
+      <text>24小时制</text>
+      <switch checked="{{checkeds[0]}}" bindchange="twtotw"/>
+    </view>
+    <view class='setitems'>
+      <text>显示秒</text>
+      <switch checked="{{checkeds[1]}}" bindchange="showSecond"/>
+    </view>
+    <view class='setitems'>
+      <text>显示日期</text>
+      <switch checked="{{checkeds[2]}}" bindchange="showDate"/>
+    </view>
+    <view class='setitems'>
+      <text>显示星期</text>
+      <switch checked="{{checkeds[3]}}" bindchange="showWeek"/>
+    </view>
+    <view class='setitems' bindtap='feedback'>
+      <text>意见反馈</text>
+    </view>
+    <button bindtap='onShareAppMessage' plain='ture' style='border-top:none;border-left:none;border-right:none;border-bottom: solid 1px #cccccc;border-radius: 0;' open-type="share">
+    <text class='share' style='height: 10vw;'>分享给好友</text>
+    </button>
+</view>

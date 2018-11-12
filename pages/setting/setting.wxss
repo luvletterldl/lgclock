@@ -1,0 +1,16 @@
+/* pages/setting/setting.wxss */
+.setitems {
+  display:flex;
+  height: 10vw;
+  justify-content:space-between;
+  padding: 1vh 5vw;
+  border-bottom:solid 1px #cccccc;
+  align-items: center;
+}
+.share {
+  display:flex;
+  height: 10vw;
+  justify-content:space-between;
+  padding: 1vh 1vw;
+  align-items: center;
+}

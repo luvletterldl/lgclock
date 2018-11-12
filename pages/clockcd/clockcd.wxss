@@ -1,160 +1,19 @@
 /* pages/clockcd/clockcd.wxss */
-/* pages/countdown/countdown.wxss */
-.cdbg {
-  background-color: #000000;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  /* touch-action: none; */
-}
-.hms-bg {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  transform: rotate(90deg) translate(31vh, -13vw);
-}
-.htom {
-  /* margin-top: 9vh; */
-  display: flex;
-  flex-direction: column;
-  /* justify-content: space-between; */
-}
-.hlump, .mlump, .slump {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center
-}
-.topbg {
-  width: 300rpx;
-  height: 320rpx;
-}
-.axles {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin: -130rpx 0 0 0;
-}
-.mtosup, .mtosdown {
-  padding: 20rpx 10rpx;
-  display: flex;
-  width: 30rpxh;
-  height: 50rpx;
-}
-.add, .reduce{
-  margin: 10rpx 0;
-  width: 130rpx;
-  height: 80rpx;
-}
-.htext, .mtext, .stext {
-  display: flex;
-  font-size: 200rpx;
-  font-family: Impact;
-  color: #ffffff;
-  z-index: 3;
-  justify-content:center;
-}
-.btns {
-  transform: rotate(90deg) translate(45vh, 22vh);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-.transform {
-  transform: rotate(90deg) translate(-15vh, 2vh);
-  position: absolute;
-  color: #ffffff;
-  font-size: 2.2vh;
-}
-.transform image {
-  width: 15vh;
-  height: 4.5vh;
-}
-.show-hidden {
-  transform: rotate(90deg) translate(-95vh, -3vw);
-  position: absolute;
-}
-.show-hidden image {
-  width: 5.5vh;
-  height: 5vw;
-}
-
-.btns button {
-  font-size: 2.2vh;
-  width: 20vh;
-  height: 5vh;
-  border-radius: 50px;
-  background-color: #ffffff;
-}
-.waring, .finished, .areysure, .dontfast{
-  padding: 2vh;
-  transform: rotate(90deg) translate(33vh);
-  font-size: 3vh;
-  color: #171717;
-  background-color: #fff;
-}
-.warct {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
-  justify-items: center;
-  justify-content: space-around;
-  border: 0;
-  width: 40vh;
-  height: 40vw;
-  background-color: #fefffe
-}
-.finct, .aresure{
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
-  justify-items: center;
-  justify-content: space-around;
-  border: 0;
-  width: 70vh;
-  height: 40vw;
-  background-color: #fefffe
-}
-.warct .context,.finct .context, .aresure .context {
-  white-space: nowrap;
-}
-.cancon {
-  width: 60vh;
-  display: flex;
-  justify-content: space-around;
-}
-
-.divLine{
- background: #BBBFCB;
- width: 100%;
- height: 3rpx;
-}
-.divLinehid{
- background: #ffffff;
- width: 100%;
- height: 1rpx;
-}
-
 .line {
   width: 65vw;
-  height: 1.5vw;
+  height: 1vw;
   position: relative;
   z-index: 10;
-  margin: 33vw -3vw 0 -62.5vw;
+  background-color: #000000;
+  margin: 34vw -3vw 0 -63vw;
 }
-
-.cdline {
-  width: 300rpx;
-  height: 15rpx;
+.lineWS {
+  width: 48vw;
+  height: 1vw;
   position: relative;
   z-index: 10;
-  margin: -265rpx 0 0 0;
+  background-color: #000000;
+  margin: 25.5vw -7vw 0 -46vw;
 }
 /* pages/clock/clock.wxss */
 .ckbg {
@@ -166,18 +25,50 @@
   flex-direction: column;
 }
 .clock {
-  transform: rotate(90deg) translate(11vh);
+  transform: rotate(90deg) translate(3vh, 6vw);
+  display: flex;
+  align-items: center;
+}
+.clockWithS {
+  transform: rotate(90deg) translate(2vh, 5vw);
   display: flex;
   align-items: center;
 }
 .calendar {
-  transform: rotate(90deg)  translate(35vw, -41vw);
-  /* width: 138vw; */
   display: flex;
+  transform: rotate(90deg) translate(35vw, -41vw);
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   color: #ffffff;
+}
+.calendarWS {
+  display: flex;
+  transform: rotate(90deg) translate(35vw, -35vw);
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color: #ffffff;
+}
+.set {
+  display: flex;
+  transform: rotate(90deg)  translate(80vh, -41vw);
+  align-items: center;
+  justify-content: space-around;
+}
+.set image {
+  width: 9vh;
+  height: 9vh;
+}
+.setWS {
+  display: flex;
+  transform: rotate(90deg)  translate(80vh, -35vw);
+  align-items: center;
+  justify-content: space-around;
+}
+.setWS image {
+  width: 9vh;
+  height: 9vh;
 }
 .feedback {
   display: flex;
@@ -192,7 +83,13 @@
   height: 4vw;
 }
 .apm {
-  transform: rotate(90deg)  translate(0, 25vw);
+  transform: rotate(90deg)  translate(-13vw, 35vw);
+  z-index: 11;
+  font-family: Impact;
+  font-size: 4vh;
+}
+.apmWS {
+  transform: rotate(90deg)  translate(-18vw, 26vw);
   z-index: 11;
   font-family: Impact;
   font-size: 4vh;
@@ -200,57 +97,103 @@
 .week {
   font-family: Impact;
   font-size: 3vh;
+  background-color:'#ffffff';
+  margin-left:3vw;
+  border-radius: 2vw;
+  padding: 1vw 4vw;
 }
 .himg, .mimg {
+  border-radius: 3vw;
+  background-color: #2c2c2c;
   width: 65vw;
   height: 70vw;
 }
+.himgWS, .mimgWS, .simgWS {
+  border-radius: 3vw;
+  background-color: #2c2c2c;
+  width: 48vw;
+  height: 53vw;
+}
 .mtosup, .mtosdown {
-  padding: 5vw 2.5vw;
+  padding: 2vw 1.3vw;
+  background-color: #ffffff;
+  border-radius: 10vh;
   display: flex;
-  width: 6vw;
-  height: 10vw;
+  width: 1.3vw;
+  height: 3vw;
+  margin: 5vw 1vw;
+}
+.mtosupWS, .mtosdownWS {
+  padding: 1.5vw 1vw;
+  background-color: #ffffff;
+  border-radius: 10vh;
+  display: flex;
+  width: 1vw;
+  height: 1.8vw;
+  margin: 5vw 1vw;
 }
 .hour, .min {
   display: flex;
   flex-direction: row;
 }
-.cdhtom {
-  /* margin-left: 3vw; */
-  height: 300rpx;
-  margin: 100rpx 0 -40rpx 0;
+.hourWS, .minWS, .secWS {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
 }
 .chtom {
   height: 70vw;
-  padding: 2vw 0 0 4vw;
+  padding: 2vw 1vw 1vw 4vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 3vw;
+}
+.chtomWS {
+  height: 70vw;
+  padding: 2vw 1vw 0vw 4vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 3vw -1vw 6vw 3vw;
 }
 .chtexts, .cmtexts {
   display: flex;
-  font-size: 45vw;
+  font-size: 55vw;
   font-family: Impact;
   color: #ffffff;
   z-index: 3;
   width: 20vw;
   justify-content:center;
-  margin: 6vw 20vw 0 -42.5vw;
+  margin: 1vw 20vw 0vw -42vw;
 }
-/* .trans {
-  transform: rotate(90deg) translate(45vh ,40vw);
+.chtextsWS, .cmtextsWS {
   display: flex;
-  align-items: center;
+  font-size: 38vw;
+  font-family: Impact;
   color: #ffffff;
-  font-size: 2.2vh;
-} */
-/* .trans image{
-  width: 9vh;
-  height: 3vh;
-} */
+  z-index: 3;
+  width: 20vw;
+  justify-content:center;
+  margin: 3vw 12vw 0 -34vw;
+}
+.cstextsWS {
+  display: flex;
+  font-size: 38vw;
+  font-family: Impact;
+  color: #ffffff;
+  z-index: 3;
+  width: 20vw;
+  justify-content:center;
+  margin: 3vw 12vw 0 -34vw;
+}
+.loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+}
+.loading image{
+  transform: translate(50rpx, 400rpx);
+}  
 
 .loading {
   width: 100vw;

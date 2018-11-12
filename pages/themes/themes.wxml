@@ -1,0 +1,7 @@
+<!--pages/themes/themes.wxml-->
+<view class='pshell'>
+  <view wx:for="{{pures}}" class='pureviews'>
+    <image class='puresimg' src='../../utils/resource/image/{{item.pngs}}.png'></image>
+    <view class='toset' style='background-color:{{item.status ? "#c2c2c2" : "#333333"}};' bindtap='setTheme' data-status='{{item.status}}' data-pure='{{item.pngs}}'>{{item.status ? '已设置' : '立即设置'}}</view>
+  </view>
+</view>
