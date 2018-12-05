@@ -1,6 +1,7 @@
 // pages/countdown/countdown.js
 var ttemp = null, blbl = null, setTime = null;
 import sets from '../../settings.js'
+import imgs from '../../utils/resource/base64/imgbs64.js'
 Date.prototype.Format = function (fmt) {
   var o = {
     'M+': this.getMonth() + 1,
@@ -112,6 +113,9 @@ Page({
     ste: false,
 
     showS: [false, true, true, true],
+    //guides img
+    guides: imgs.imgs.guides,
+    guideshow: false,
 
   },
   //events
@@ -119,6 +123,10 @@ Page({
     wx.navigateTo({
       url: '../setting/setting',
     })
+  },
+
+  closeGuide: function() {
+    this.setData({ guideshow: false})
   },
 
   msgswitch: function () {
@@ -174,6 +182,7 @@ Page({
           frontColor: '#ffffff', // 必写项
           backgroundColor: '#000000', // 必写项
         })
+        that.setData({ guideshow : true})
       }
     })
     setTimeout(() => {
@@ -191,6 +200,33 @@ Page({
     wx.setKeepScreenOn({
       keepScreenOn: true,
     })
+
+    //share
+    wx.showShareMenu({
+      withShareTicket: true,
+      success: function (e) {
+        if (e.confirm) {
+          console.log('share success')
+        }
+      }
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    let that = this
+    let reloadF = null
+
+    //设置时间在onShow中,防止在设置页面停留时间过长导致回到此页面秒钟快速跳动bug
     let weekday = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
     let dates = new Date()
     let ttemp = dates.toString().split(' ');
@@ -238,33 +274,7 @@ Page({
         
       })
     }, 1000)
-    wx.setKeepScreenOn({
-      keepScreenOn: true,
-    })
-    //share
-    wx.showShareMenu({
-      withShareTicket: true,
-      success: function (e) {
-        if (e.confirm) {
-          console.log('share success')
-        }
-      }
-    })
-  },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    let that = this
-    let reloadF = null
     blbl = setInterval(()=>{
       this.setData({
         secblbl: !this.data.secblbl

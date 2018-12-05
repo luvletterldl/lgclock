@@ -70,18 +70,6 @@
   width: 9vh;
   height: 9vh;
 }
-.feedback {
-  display: flex;
-  transform: rotate(90deg)  translate(80vh, -41vw);
-  color: #ffffff;
-  align-items: center;
-  width: 17vh;
-  justify-content: space-around;
-}
-.feedback image {
-  width: 3vh;
-  height: 4vw;
-}
 .apm {
   transform: rotate(90deg)  translate(-13vw, 35vw);
   z-index: 11;
@@ -195,14 +183,73 @@
   transform: translate(50rpx, 400rpx);
 }  
 
-.loading {
+.guide {
+  position: absolute;
+  background-color: #fff;
+  top: 15vh;
+  height: 110vw;
+  width: 80vw;
+  left: 10vw;
+  z-index: 12;
+  border-radius: 1vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+swiper {
+  width: 80vw;
+  height: 108vw;
+}
+swiper-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+.slide-image {
+  width: 80vw;
+  height: 64.5vw;
+}
+.guide-ctx {
+  text-align: center;
+  font-size: 4.5vw;
+  margin: 0 2vw;
+  height: 36vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.guidectx-tit {
+  color: #1e1e1e;
+  font-weight: 700;
+  font-size: 5.5vw;
+  margin-bottom: 4vw;
+}
+.guidectx-ctx {
+  color: #333333;
+  font-weight: 300;
+}
+.guidectx-btn {
+  color: #333333;
+  text-align: center;
+  margin-top: 2vw;
+  padding: 2vw 0;
+  font-size: 5vw;
+  width: 40vw;
+  background-color: #fff;
+  border: solid 1px #333333;
+  border-radius: 5px;
+}
+.shade {
+  position: absolute;
+  z-index: 11;
+  top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #000000;
+  background-color: #333;
+  opacity: .4;
 }
-.loading image{
-  transform: translate(50rpx, 400rpx);
-}  
+
 
 @font-face {
     font-family: 'Impact';

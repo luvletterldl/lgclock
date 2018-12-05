@@ -71,6 +71,23 @@
   </view>
 </view>
 
+<!-- guide -->
+<view class='guide' wx:if="{{guideshow}}">
+  <swiper indicator-dots='true' bindchange="swiperE">
+    <block wx:for="{{guides}}">
+    <swiper-item>
+      <image src="{{item[0]}}" class="slide-image"/>
+      <view class='{{item[3]}} ? guide-ctx-wb : guide-ctx'>
+        <view class='guidectx-tit'>{{item[1]}}</view>
+        <view class='guidectx-ctx'>{{item[2]}}</view>
+        <view wx:if="{{item[3]}}" bindtap='closeGuide' class='guidectx-btn'>{{item[3]}}</view>
+      </view>
+    </swiper-item>
+  </block>
+  </swiper>
+</view>
+<view class='shade' wx:if="{{guideshow}}"></view>
+
 <view  class='loading' wx:if="{{clock == 'hidden'}}" style='background-color:{{bgcolors[0]}};'>
   <image animation="{{animationData}}" src='../../utils/resource/image/loading.svg'></image>
 </view>
